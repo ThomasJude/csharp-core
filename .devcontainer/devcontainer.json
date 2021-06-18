@@ -1,0 +1,22 @@
+// For format details, see https://aka.ms/vscode-remote/devcontainer.json or this file's README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.101.1/containers/dotnetcore-3.1
+{
+	//
+	// General
+	//
+	"name": "TJ_CSharp_Core",
+	// vscode extenion ids
+	"extensions": [
+		"ms-vscode.csharp",
+		"ms-dotnettools.csharp",
+		"MS-vsliveshare.vsliveshare",
+		"zxh404.vscode-proto3"
+	],
+
+	//
+	// Docker Compose
+	//
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "app",
+	"workspaceFolder": "/app"
+}

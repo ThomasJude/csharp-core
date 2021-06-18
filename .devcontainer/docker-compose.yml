@@ -1,0 +1,20 @@
+version: "3.7"
+
+services:
+  app:
+    build:
+      context: .
+      target: development
+    container_name: tj_csharp_core
+    image: tj_csharp_core
+    networks:
+      - proj_network
+    tty: true
+    volumes:
+      - type: bind
+        source: ..
+        target: /app
+
+networks:
+  proj_network:
+    name: tj_csharp_core
