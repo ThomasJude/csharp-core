@@ -1,0 +1,23 @@
+#!/bin/bash
+
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+APP_DIR=$SCRIPT_DIR/..
+taskName=$1
+
+case $taskName in
+    build)
+        dotnet build
+        ;;
+    run)
+        dotnet run -p $APP_DIR/thomasjude.core/thomasjude.core.csproj
+        ;;
+    test)
+        dotnet test
+        ;;
+    clean)
+        dotnet clean
+        ;;
+    *)
+        echo 'no task found. skipping...'
+        ;;
+esac
