@@ -5,19 +5,40 @@ APP_DIR=$SCRIPT_DIR/..
 taskName=$1
 
 case $taskName in
-    build)
-        dotnet build
-        ;;
     run)
         dotnet run -p $APP_DIR/thomasjude.core/thomasjude.core.csproj
-        ;;
-    test)
-        dotnet test
-        ;;
-    clean)
-        dotnet clean
+    ;;
+    true-clean)
+        projFiles=$(find -type f -name *.csproj)
+        projDirs=$(dirname ${projFiles})
+        bin_dirs=$(find ${projDirs} -type d -name bin)
+        obj_dirs=$(find ${projDirs} -type d -name obj)
+        remove_dirs="${bin_dirs} ${obj_dirs}"
+        resolved_dirs=
+
+        for dir in ${remove_dirs}; do
+            resolved_dirs="${resolved_dirs} $(readlink -m $dir)"
+        done
+        unset dir
+
+        echo -e "The following directories will be deleted:"
+        for dir in ${resolved_dirs}; do
+            echo $dir
+        done
+        unset dir
+
+        read -p "Is this ok? (y/N): " answer
+        if [ ${answer} = 'y' ]; then
+            echo 'Removing directories...'
+            rm -Rf $resolved_dirs
+        else
+            echo 'Aborting...'
+        fi
+    ;;
+    publish)
+        dotnet nuget push 
         ;;
     *)
         echo 'no task found. skipping...'
-        ;;
+    ;;
 esac
