@@ -411,4 +411,4 @@ appsettings.*.json
 ##
 ## Project specific
 ##
-
+.devcontainer/.env
