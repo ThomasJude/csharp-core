@@ -2,7 +2,6 @@
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 APP_DIR=$(readlink -e $SCRIPT_DIR/..)
-API_KEY="$NUGET_KEY"
 taskName=$1
 
 case $taskName in
@@ -36,16 +35,6 @@ case $taskName in
             echo 'Aborting...'
         fi
     ;;
-    publish)
-        pkgDir="${APP_DIR}/thomasjude.core/bin/Debug"
-        latestPkg=$(ls -1t ${pkgDir}/*.nupkg 2> /dev/null | head -n 1)
-        if [ ! -z "${latestPkg}" ]; then
-            echo "dotnet nuget push $latestPkg --api-key $API_KEY --source https://api.nuget.org/v3/index.json"
-            dotnet nuget push $latestPkg --api-key $API_KEY --source https://api.nuget.org/v3/index.json
-        else
-            echo ".nupkg file does not exist. Please generate .nupkg file and try again"
-        fi
-        ;;
     *)
         echo 'no task found. skipping...'
     ;;
