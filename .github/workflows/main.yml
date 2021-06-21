@@ -3,12 +3,10 @@ name: Build & Test Project
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
   workflow_dispatch:
 
 jobs:
-  build:
+  build-and-deploy:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -21,3 +19,9 @@ jobs:
           dotnet-version: '5.0.x' # SDK Version to use; x will use the latest version of the 3.1 channel
       - run: dotnet build
       - run: dotnet test
+      - run: ls ./bin && echo $NUGET_PUBLISH_TOKEN
+        env:
+          NUGET_PUBLISH_TOKEN: ${{secrets.nuget_publish_token}}
+      # - run: dotnet nuget push ./path/to/pkg.nupkg --api-key $NUGET_PUBLISH_TOKEN --source https://api.nuget.org/v3/index.json
+      #   env:
+      #     NUGET_PUBLISH_TOKEN: ${{secrets.nuget_publish_token}}

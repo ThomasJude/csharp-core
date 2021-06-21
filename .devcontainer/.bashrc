@@ -25,3 +25,4 @@ appendPath ${HOME}/.dotnet/tools
 # variables
 export DOTNET_ROOT="/opt/dotnet"
 export APP_ROOT="/app"
+export NUGET_KEY=$nuget_key # this veriable comes from .devcontainer/.env
