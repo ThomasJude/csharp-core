@@ -17,9 +17,9 @@ jobs:
       - uses: actions/setup-dotnet@v1
         with:
           dotnet-version: '5.0.x' # SDK Version to use; x will use the latest version of the 3.1 channel
-      - run: dotnet build
+      - run: dotnet build --configuration Release
       - run: dotnet test
-      - run: ls -al && echo $NUGET_PUBLISH_TOKEN
+      - run: ls -al ./thomasjude.core/bin/Release && echo "token - ${NUGET_PUBLISH_TOKEN} -"
         env:
           NUGET_PUBLISH_TOKEN: ${{secrets.nuget_publish_token}}
       # - run: dotnet nuget push ./path/to/pkg.nupkg --api-key $NUGET_PUBLISH_TOKEN --source https://api.nuget.org/v3/index.json
