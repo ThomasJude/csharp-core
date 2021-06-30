@@ -9,11 +9,5 @@ namespace thomasjude.core.Mapping
     {
         TOut Map<TIn, TOut>(TIn src);
         TOut Map<TOut>(object src);
-        void RegisterFromAssemblies(IEnumerable<Assembly> assemblies);
-    }
-
-    public interface IMapperProfile
-    {
-
     }
 }

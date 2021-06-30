@@ -1,7 +1,5 @@
 
 using System;
-using System.Collections.Generic;
-using System.Reflection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using thomasjude.core.Mapping;
 
@@ -14,11 +12,8 @@ namespace thomasjude.tests
         public void Map_NoErrors()
         {
             // arrange
-            IMapper mapper = new AutoMapperAdapter();
-            // var assemblies = new List<Assembly>{
-            //     Assembly.GetExecutingAssembly()
-            // };
-            mapper.RegisterFromAssemblies(AppDomain.CurrentDomain.GetAssemblies());
+            var assemblies = AppDomain.CurrentDomain.GetAssemblies();
+            IMapper mapper = new AutoMapperAdapter(assemblies);
             var person = new Person{
                 FirstName = "John",
                 LastName = "Doe"
@@ -28,8 +23,7 @@ namespace thomasjude.tests
             var result = mapper.Map<PersonDto>(person);
 
             // assert
-            Assert.AreEqual("JohnDoe", result.FullName);
-            Assert.IsTrue(true);
+            Assert.AreEqual("John Doe", result.FullName);
         }
 
         public class Person
