@@ -9,7 +9,7 @@ namespace ThomasJude.Tests
     public class AutoMapperAdapterTests
     {
         [TestMethod]
-        public void Map_NoErrors()
+        public void Map_ExistingProfile_NoErrors()
         {
             // arrange
             var assemblies = AppDomain.CurrentDomain.GetAssemblies();
@@ -24,6 +24,28 @@ namespace ThomasJude.Tests
 
             // assert
             Assert.AreEqual("John Doe", result.FullName);
+        }
+        [TestMethod]
+        public void Map_NoExistingProfile_Error()
+        {
+            // arrange
+            var assemblies = AppDomain.CurrentDomain.GetAssemblies();
+            IMapper mapper = new AutoMapperAdapter(assemblies);
+            var p = new PersonDto{
+                FullName = "John Doe"
+            };
+            bool didThrowException = false;
+
+            // act
+            try{
+                var result = mapper.Map<Person>(p);
+            }catch(Exception ex)
+            {
+                didThrowException = true;
+            }
+
+            // assert
+            Assert.IsTrue(didThrowException);
         }
 
         public class Person

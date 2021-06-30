@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <PackageId>ThomasJude.Core</PackageId>
-    <Version>0.0.10</Version>
+    <Version>0.1.0</Version>
     <Company>ThomasJude</Company>
   </PropertyGroup>
 
