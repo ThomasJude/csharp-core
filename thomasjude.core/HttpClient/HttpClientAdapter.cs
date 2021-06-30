@@ -6,7 +6,7 @@ using System.Net;
 using System.Net.Http;
 using http = System.Net.Http.HttpClient;
 
-namespace thomasjude.core.HttpClient
+namespace ThomasJude.Core.HttpClient
 {
     public class HttpClientAdapter : IHttpClient
     {

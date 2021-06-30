@@ -1,9 +1,9 @@
 
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using thomasjude.core.Mapping;
+using ThomasJude.Core.Mapping;
 
-namespace thomasjude.tests
+namespace ThomasJude.Tests
 {
     [TestClass]
     public class AutoMapperAdapterTests

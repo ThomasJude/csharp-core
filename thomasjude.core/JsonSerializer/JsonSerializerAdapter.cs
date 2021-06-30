@@ -1,7 +1,7 @@
 
 using JsonSerial = System.Text.Json.JsonSerializer;
 
-namespace thomasjude.core.JsonSerializer
+namespace ThomasJude.Core.JsonSerializer
 {
     public class JsonSerializerAdapter : IJsonSerializer
     {

@@ -1,9 +1,9 @@
 using System;
 using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using thomasjude.core.Logging;
+using ThomasJude.Core.Logging;
 
-namespace thomasjude.tests.integrationTests
+namespace ThomasJude.Tests.IntegrationTests
 {
     [TestClass]
     public class FileLoggerTests

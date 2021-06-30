@@ -1,7 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using thomasjude.core.JsonSerializer;
+using ThomasJude.Core.JsonSerializer;
 
-namespace thomasjude.tests
+namespace ThomasJude.Tests
 {
     [TestClass]
     public class JsonSerializerAdapterTests

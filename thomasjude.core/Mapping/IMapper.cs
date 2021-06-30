@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace thomasjude.core.Mapping
+namespace ThomasJude.Core.Mapping
 {
     public interface IMapper
     {

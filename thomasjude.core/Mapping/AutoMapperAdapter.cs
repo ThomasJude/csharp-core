@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Linq;
 using AutoMapper;
 
-namespace thomasjude.core.Mapping
+namespace ThomasJude.Core.Mapping
 {
     public class AutoMapperAdapter : IMapper
     {

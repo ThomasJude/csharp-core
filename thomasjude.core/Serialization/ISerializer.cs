@@ -1,7 +1,7 @@
 
 using System;
 
-namespace thomasjude.core.Serialization
+namespace ThomasJude.Core.Serialization
 {
     public interface ISerializer
     {

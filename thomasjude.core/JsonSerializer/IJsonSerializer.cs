@@ -1,8 +1,8 @@
 
 using System;
-using thomasjude.core.Serialization;
+using ThomasJude.Core.Serialization;
 
-namespace thomasjude.core.JsonSerializer
+namespace ThomasJude.Core.JsonSerializer
 {
     public interface IJsonSerializer : ISerializer
     {
