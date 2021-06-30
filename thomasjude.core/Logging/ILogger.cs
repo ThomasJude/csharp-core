@@ -1,7 +1,7 @@
 
 using System;
 
-namespace thomasjude.core.Logging
+namespace ThomasJude.Core.Logging
 {
     public interface ILogger
     {

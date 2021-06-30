@@ -5,8 +5,8 @@ APP_DIR=$(readlink -e $SCRIPT_DIR/..)
 taskName=$1
 
 case $taskName in
-    run)
-        dotnet run -p $APP_DIR/thomasjude.core/thomasjude.core.csproj
+    watch)
+        dotnet watch -p $APP_DIR/thomasjude.tests/thomasjude.tests.csproj test
     ;;
     true-clean)
         projFiles=$(find -type f -name *.csproj)

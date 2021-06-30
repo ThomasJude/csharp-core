@@ -2,7 +2,7 @@
 using System;
 using System.IO;
 
-namespace thomasjude.core.Logging
+namespace ThomasJude.Core.Logging
 {
     public class FileLogger : ILogger
     {
